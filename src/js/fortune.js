@@ -4,7 +4,7 @@ const btn = document.getElementById('cookie-btn');
 const box = document.getElementById('fortune-box');
 
 import imgAbierta from '../assets/icons/galletas2.png';
-import imgCerada from '../assets/icons/galletas1.png';
+import imgCerrada from '../assets/icons/galletas1.png';
 
 // Список предсказаний на испанском языке
 const mensajes = [
@@ -47,24 +47,20 @@ function getRandomFortune() {
 // Логика работы интерактива
 if (trigger && btn && box) {
     function openCookie() {
-        // Получаем случайную фразу
+        // 1. Сразу меняем картинку на открытую и выводим текст предсказания
+        trigger.src = imgAbierta; 
         box.textContent = getRandomFortune();
         
-        // Настраиваем стили плашки ответа на лету (нежно-белая с синим текстом #003d54)
+        // 2. Сразу показываем плашку ответа в сине-персиковой гамме
         box.className = "p-5 rounded-xl text-center font-semibold italic text-base shadow-sm bg-white/50 backdrop-blur-sm border border-black/5 text-[#003d54] flex items-center justify-center transition-all duration-300";
         
-        // Добавляем печенью временную анимацию прыжка из Tailwind, чтобы клик чувствовался
-        trigger.classList.add('animate-bounce');
-        setTimeout(() => {
-            trigger.src = imgAbierta; // Меняем изображение печенья на "открытое"
-            trigger.classList.remove('animate-bounce');
+        // 3. Плавно скроллим к тексту, чтобы он сразу был виден
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-        }, 1000);
-
-        // ✨ АВТОМАТИЧЕСКИЙ СБРОС через 4 секунды
+        // 4. Автоматический сброс на начало через 4 секунды (4000 мс)
         setTimeout(() => {
             box.className = "hidden"; // Скрываем плашку с текстом
-            trigger.src = imgCerada; // Возвращаем целое печенье
+            trigger.src = imgCerrada;  // Возвращаем целое печенье обратно
         }, 2000);
     }
 
