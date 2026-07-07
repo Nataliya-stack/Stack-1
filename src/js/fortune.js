@@ -4,6 +4,7 @@ const btn = document.getElementById('cookie-btn');
 const box = document.getElementById('fortune-box');
 
 import imgAbierta from '../assets/icons/galletas2.png';
+import imgCerada from '../assets/icons/galletas1.png';
 
 // Список предсказаний на испанском языке
 const mensajes = [
@@ -63,7 +64,7 @@ if (trigger && btn && box) {
         // ✨ АВТОМАТИЧЕСКИЙ СБРОС через 4 секунды
         setTimeout(() => {
             box.className = "hidden"; // Скрываем плашку с текстом
-            trigger.src = 'src/assets/icons/galletas1.png'; // Возвращаем целое печенье
+            trigger.src = imgCerada; // Возвращаем целое печенье
         }, 2000);
     }
 
