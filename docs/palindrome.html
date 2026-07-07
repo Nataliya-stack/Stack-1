@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Palíndromos</title>
+  <script type="module" crossorigin src="./assets/palindrome-Cyfh_rv8.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/input-Cz7tZFJ-.js">
+  <link rel="stylesheet" crossorigin href="./assets/input-DmrSzocp.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between p-6 md:p-12 antialiased">
+
+    <!-- Шапка страницы -->
+    <header class="w-full max-w-2xl mx-auto flex justify-between items-center border-b border-black/5 pb-4 mb-8">
+        <a href="./index.html" class="text-sm font-semibold text-brand-blue-text hover:underline">&larr; Volver al Dashboard</a>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-brand-blue-text">Algoritmos</h2>
+    </header>
+
+    <!-- Основной блок -->
+    <main class="flex-1 flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
+        <!-- Увеличили максимальную ширину (max-w-2xl) и внутренние отступы (p-10) -->
+        <div class="w-full bg-brand-pink-bg p-10 rounded-2xl shadow-xl space-y-8">
+            
+            <!-- Заголовок упражнения -->
+            <div class="flex items-center space-x-4 justify-center">
+                <svg class="w-8 h-8 text-brand-blue-text" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                </svg>
+                <!-- Увеличили шрифт до text-4xl -->
+                <h1 class="text-4xl font-bold text-[#003d54] font-viaoda tracking-wide">¿Es un Palíndromo?</h1>
+            </div>
+            
+            <!-- Увеличили текст описания (text-base) и убрали белый цвет -->
+            <p class="text-base text-center font-medium text-brand-blue-text">
+                Introduce una palabra o frase para verificar si se lee igual al derecho y al revés.
+            </p>
+
+            <!-- Поле ввода с увеличенными отступами и текстом -->
+            <div class="space-y-2">
+                <input type="text" id="phrase-input" placeholder="Ej: Anita lava la tina" class="w-full px-5 py-4 rounded-xl text-lg shadow-inner">
+            </div>
+
+            <!-- Твоя фирменная кнопка -->
+            <button id="check-btn" class="btn-primary w-full shadow-md text-lg py-4">
+                Verificar Frase
+            </button>
+
+            <!-- Блок результата с увеличенным шрифтом (text-base) -->
+            <div id="result-box" class="hidden p-5 rounded-xl text-center font-bold text-base shadow-sm transition-all duration-300">
+                <!-- JavaScript добавит текст -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="not-italic text-pink-900/80 font-semibold mt-16 text-center tracking-widest text-sm uppercase">
+        Desarrollado por Nataliya &bull; 2026
+    </footer>
+        
+</body>
+</html>

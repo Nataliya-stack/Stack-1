@@ -21,6 +21,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
+    outDir: 'docs',
     rollupOptions: {
       input: htmlFiles // ✨ ¡Vite se configura solo con todos tus HTML!
     }
