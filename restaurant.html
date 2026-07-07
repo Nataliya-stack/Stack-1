@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurante</title>
+    <link rel="stylesheet" href="./src/input.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between p-6 md:p-12 antialiased">
+
+    <!-- Шапка страницы -->
+    <header class="w-full max-w-2xl mx-auto flex justify-between items-center border-b border-black/5 pb-4 mb-8">
+        <a href="./index.html" class="text-sm font-semibold text-brand-blue-text hover:underline">&larr; Volver al Dashboard</a>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-brand-blue-text">Ejercicio 7.8</h2>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="flex-1 flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
+        <!-- Твоя фирменная персиковая плашка увеличенного размера -->
+        <div class="w-full bg-brand-pink-bg p-6 rounded-2xl shadow-xl space-y-6">
+            
+            <!-- Заголовок -->
+            <div class="flex items-center space-x-4 justify-center">
+                <svg class="w-8 h-8 text-brand-blue-text" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                </svg>
+                <h1 class="text-4xl font-normal text-brand-dark-text font-viaoda tracking-wide">Menú del Restaurante</h1>
+            </div>
+            
+            <p class="text-base text-center font-medium text-brand-blue-text">
+                Selecciona tu plato y marca si tienes preferencias o intolerancias.
+            </p>
+
+            <!-- Элемент выбора блюда (Dropdown Select) -->
+            <div class="space-y-2">
+                <label for="plato-select" class="text-sm font-bold uppercase tracking-wider text-pink-900/60 block">1. Selecciona un plato:</label>
+                <select id="plato-select" class="w-full px-5 py-4 rounded-xl text-lg bg-white border border-black/5 text-[#003d54] font-semibold focus:outline-none focus:border-brand-blue-text cursor-pointer shadow-sm">
+                    <option value="carne">🍖 Carne</option>
+                    <option value="pasta">🍝 Pasta (con gluten)</option>
+                    <option value="risotto">🍲 Risotto (con lactosa)</option>
+                </select>
+            </div>
+
+            <!-- Блок чекбоксов для выбора непереносимостей -->
+            <div class="space-y-3">
+                <p class="text-sm font-bold uppercase tracking-wider text-pink-900/60 block">2. Tus preferencias o intolerancias:</p>
+                
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Чекбокс Веган -->
+                    <label for="vegano" class="flex items-center space-x-4 p-4 rounded-xl bg-white/80 border border-black/5 cursor-pointer hover:bg-white transition-colors shadow-sm">
+                        <input type="checkbox" id="vegano" class="w-5 h-5 rounded border-gray-300 text-brand-blue-text focus:ring-brand-blue-text">
+                        <span class="font-semibold text-lg text-[#003d54]">🌱 Vegano/a</span>
+                    </label>
+
+                    <!-- Чекбокс Лактоза -->
+                    <label for="lactosa" class="flex items-center space-x-4 p-4 rounded-xl bg-white/80 border border-black/5 cursor-pointer hover:bg-white transition-colors shadow-sm">
+                        <input type="checkbox" id="lactosa" class="w-5 h-5 rounded border-gray-300 text-brand-blue-text focus:ring-brand-blue-text">
+                        <span class="font-semibold text-lg text-[#003d54]">🥛 Intolerancia a la lactosa</span>
+                    </label>
+
+                    <!-- Чекбокс Глютен -->
+                    <label for="gluten" class="flex items-center space-x-4 p-4 rounded-xl bg-white/80 border border-black/5 cursor-pointer hover:bg-white transition-colors shadow-sm">
+                        <input type="checkbox" id="gluten" class="w-5 h-5 rounded border-gray-300 text-brand-blue-text focus:ring-brand-blue-text">
+                        <span class="font-semibold text-lg text-[#003d54]">🌾 Intolerancia al gluten</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Твоя фирменная крупная кнопка заказа -->
+            <button id="order-btn" class="btn-primary w-full shadow-md text-lg py-4">
+                Realizar Pedido
+            </button>
+
+            <!-- Блок вывода результата (Стили добавит JS) -->
+            <div id="result-box" class="hidden"></div>
+        </div>
+    </main>
+
+    <!-- Подвал страницы -->
+    <footer class="not-italic text-pink-900/80 font-semibold mt-16 text-center right tracking-widest text-sm uppercase">
+            Desarrollado por Nataliya &bull; 2026
+    </footer>
+     
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/restaurant.js"></script>
+</body>
+</html>

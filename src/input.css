@@ -1,0 +1,87 @@
+/* ==========================================================================
+   1. IMPORTAMOS LAS FUENTES EN PRIMER LUGAR
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Viaoda+Libre&display=swap');
+
+/* ==========================================================================
+   2. CORE DE TAILWIND Y PLUGINS
+   ========================================================================== */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ==========================================================================
+   3. CONFIGURACIÓN DEL TEMA (Инвертированная палитра)
+   ========================================================================== */
+@theme {
+  --color-brand-pink-bg: #ffdbd8;   /* Чистый нежно-розовый-персиковый фон для всего сайта */
+  --color-brand-blue-card: #2563eb; /* Яркий королевский синий (ультрамарин) для плашек */
+  --color-brand-dark-text: #1e1e38; /* Глубокий темный цвет для главного заголовка */  
+  --color-brand-blue-text: #005f81; /* Добавили твой цвет */
+
+  --font-viaoda: 'Viaoda Libre', serif;
+  --font-prata: 'Prata', serif;
+
+  --animate-fade-in: fade-in 0.3s ease-out;
+}
+
+/* ==========================================================================
+   4. PERSONALIZACIÓN DE LA BASE (Глобальные стили)
+   ========================================================================== */
+@layer base {
+  body {
+    background-color: var(--color-brand-pink-bg); /* ФОН САЙТА — РОЗОВЫЙ */
+    color: #ffffff; /* Текст внутри синих плашек будет белым */
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+   } 
+
+    input, textarea {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e1e38; /* темный цвет для печатаемого текста */
+    transition: all 0.2s ease;
+  }
+  
+  /* ✨ ДОБАВЬ ЭТУ СТРОКУ: она сделает все подсказки аккуратными серыми */
+  input::placeholder, textarea::placeholder {
+    color: #94a3b8; /* приятный нейтральный серый цвет (slate-400) */
+    opacity: 1; /* гарантирует, что цвет будет плотным во всех браузерах */
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--color-brand-blue);
+    box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.2);
+  }
+ 
+  h1 { @apply text-3xl font-bold tracking-tight text-brand-dark-text; }
+}
+
+/* ==========================================================================
+   5. COMPONENTES Y UTILIDADES PROPIAS
+   ========================================================================== */
+   
+/* Кнопка теперь РОЗОВАЯ (в цвет фона сайта) и лежит внутри синей плашки */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-pink-bg);
+  color: #003d54;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 95, 129, 0.2);
+  
+  &:hover {
+    background-color: #ffffff; /* При наведении становится белой */
+    color: #003d54;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@utility text-glow {
+  color: var(--color-brand-dark-text);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/input.css">
+    <title>Galletitas de la Fortuna</title>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-6 md:p-12 antialiased">
+
+    <!-- Шапка страницы -->
+    <header class="w-full max-w-2xl mx-auto flex justify-between items-center border-b border-black/5 pb-4 mb-8">
+        <a href="./index.html" class="text-sm font-semibold text-brand-blue-text hover:underline">&larr; Volver al Dashboard</a>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-brand-blue-text">Ejercicio 4.6</h2>
+    </header>
+
+    <!-- Основной интерактивный блок -->
+    <main class="flex-1 flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
+        <!-- Крупная плашка (max-w-2xl) в твоем персиковом цвете -->
+        <div class="w-full bg-brand-pink-bg p-10 rounded-2xl shadow-xl text-center space-y-8">
+            
+            <!-- Заголовок упражнения твоим шрифтом -->
+            <div class="flex items-center space-x-4 justify-center">
+                <!-- Векторная синяя иконка искры вместо эмодзи -->
+                <svg class="w-8 h-8 text-brand-blue-text" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l-.813-5.096L3 15l5.096-.813L9 9l.813 5.187L15 15l-5.187.904zM19.071 4.929a10 10 0 00-14.142 0M12 3v1m0 16v1m9-9h-1M4 12H3"></path>
+                </svg>
+                <h1 class="text-4xl font-normal text-brand-dark-text font-viaoda tracking-wide">Galletita de la Fortuna</h1>
+            </div>
+            
+            <!-- Интерактивное печенье (крупное, реагирует на наведение) -->
+            <div class="text-9xl my-6 cursor-pointer select-none transition-transform duration-300 active:scale-95 hover:scale-110 inline-block filter drop-shadow-md">
+                <img id="cookie-trigger" src="src/assets/icons/galletas1.png" alt="Galletita" class="w-full h-full">
+            </div>
+            
+            <!-- Четкий синий текст подсказки без прозрачности -->
+            <p class="text-base font-medium text-brand-blue-text">
+                Haz clic en la galletita o usa el botón para abrir tu destino.
+            </p>
+
+            <!-- Контейнер для вывода предсказания (изначально пустой и скрытый) -->
+            <div id="fortune-box" class="hidden"></div>
+
+            <!-- Твоя фирменная кнопка из input.css (крупная text-lg) -->
+            <button id="cookie-btn" class="btn-primary w-full shadow-md text-lg py-4">
+                Abrir Galletita
+            </button>
+        </div>
+    </main>
+
+    <!-- Подвал страницы -->
+    <footer class="not-italic text-pink-900/80 font-semibold mt-16 text-center tracking-widest text-sm uppercase">
+            Desarrollado por Nataliya &bull; 2026
+    </footer>
+    
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/fortune.js"></script>
+</body>
+</html>
