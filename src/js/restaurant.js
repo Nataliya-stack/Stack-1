@@ -28,11 +28,11 @@ if (platoSelect && btn && resultBox && checkVegano && checkLactosa && checkGlute
         } 
         else if (plato === 'pasta') {
             // Пасту нельзя веганам и при непереносимости глютена
-            if (esVegano || tieneIntoleranciaGluten) puedeComer = false;
+            if (tieneIntoleranciaGluten) puedeComer = false;
         } 
         else if (plato === 'risotto') {
             // Ризотто нельзя веганам и при непереносимости лактозы
-            if (esVegano || tieneIntoleranciaLactosa) puedeComer = false;
+            if (tieneIntoleranciaLactosa) puedeComer = false;
         }
 
         // Оформление плашки ответа в сине-персиковой гамме (нежно-белая подложка)

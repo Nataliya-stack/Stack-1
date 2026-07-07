@@ -3,6 +3,8 @@ const trigger = document.getElementById('cookie-trigger');
 const btn = document.getElementById('cookie-btn');
 const box = document.getElementById('fortune-box');
 
+import imgAbierta from '../assets/icons/galletas2.png';
+
 // Список предсказаний на испанском языке
 const mensajes = [
     "La paciencia es amarga, pero su fruto es dulce.", //0
@@ -53,7 +55,7 @@ if (trigger && btn && box) {
         // Добавляем печенью временную анимацию прыжка из Tailwind, чтобы клик чувствовался
         trigger.classList.add('animate-bounce');
         setTimeout(() => {
-            trigger.src = 'src/assets/icons/galletas2.png'; // Меняем изображение печенья на "открытое"
+            trigger.src = imgAbierta; // Меняем изображение печенья на "открытое"
             trigger.classList.remove('animate-bounce');
 
         }, 1000);
